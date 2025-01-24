@@ -214,12 +214,13 @@ function App() {
   }, [currentSong]); // A dependência `currentSong` garante que o código será executado quando a música mudar
 
   return (
-    <div className="App bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center">
-      <div className="bg-gradient-to-r from-purple-600 to-indigo-700 p-6 rounded-lg shadow-xl">
-        <h1 className="text-4xl font-bold mb-4 text-center">Player de Música</h1>
+    <div className="App bg-gradient-to-b from-gray-900 to-gray-800 text-white min-h-screen flex items-center justify-center">
+      <div className="bg-gray-700 p-8 rounded-2xl shadow-2xl w-11/12 max-w-2xl">
+        <h1 className="text-4xl font-bold mb-6 text-center">🎵 Player de Música</h1>
 
         {/* Exibe o título da música atual */}
-        <h2 className="text-2xl mb-6 text-center">{currentSong.title}</h2>
+        <h2 className="text-xl mb-4 text-center text-gray-300">
+          Tocando agora: <span className="font-semibold">{currentSong.title}</span></h2>
 
         {/* Elemento de áudio com chave para forçar recarregamento */}
         <audio
@@ -234,31 +235,31 @@ function App() {
             onClick={playAudio}
             className="bg-green-500 text-white py-2 px-6 rounded-full text-lg hover:bg-green-600 transition"
           >
-            Tocar
+            ▶ Tocar
           </button>
           <button
             onClick={pauseAudio}
             className="bg-red-500 text-white py-2 px-6 rounded-full text-lg hover:bg-red-600 transition"
           >
-            Pausar
+            ⏸ Pausar
           </button>
         </div>
 
         {/* Lista de músicas */}
         <div>
-          <h3 className="text-xl mb-4 text-center">Escolha uma música:</h3>
-          <ul className="space-y-2">
+          <h3 className="text-xl mb-4 text-center text-gray-300">Escolha uma música:</h3>
+          <div className="grid grid-cols-3 gap-4">
             {songs.map((song, index) => (
-              <li key={index}>
+              <div key={index}>
                 <button
                   onClick={() => changeSong(song)}
                   className="w-full text-left text-lg text-gray-200 hover:bg-indigo-500 py-2 px-4 rounded-md transition"
                 >
                   {song.title}
                 </button>
-              </li>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </div>
     </div>
