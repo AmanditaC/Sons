@@ -173,9 +173,9 @@ import './App.css';
 function App() {
   // Lista de músicas
   const songs = [
-    { title: "Song 1", file: "/Music/Canon in D - Pachelbel.mp3" },
-    { title: "Song 2", file: "/Music/ROSÉ - 3am (live performance).mp3" },
-    { title: "Song 3", file: "/Music/That's So True.mp3" },
+    { title: "Song 1", file: "/Music/CanoninDPachelbel.mp3" },
+    { title: "Song 2", file: "/Music/ROSE3amLivePerformance.mp3" },
+    { title: "Song 3", file: "/Music/ThatsSoTrue.mp3" },
   ];
 
   // Estado para armazenar a música atual
